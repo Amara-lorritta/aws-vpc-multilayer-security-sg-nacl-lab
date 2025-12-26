@@ -1,6 +1,6 @@
 ## **AWS VPC Multi-Layered Security Lab**
 
-VPC • EC2 • Security Groups • Network ACLs | Intermediate
+VPC • EC2 • Security Groups • Network ACLs 
 
 This lab demonstrates how I implemented multi-layered security in an AWS VPC by combining Security Groups (instance-level security) and Network ACLs (subnet-level security). I launched two EC2 instances—one in a public subnet and one in a private subnet—and validated traffic flow using layered access controls.
 
