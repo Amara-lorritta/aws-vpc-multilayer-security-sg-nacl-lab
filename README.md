@@ -22,8 +22,10 @@ AWS Management Console — resource creation and testing
 
 ## **Architecture Diagram**
 
+<img width="589" height="400" alt="security-comparison" src="https://github.com/user-attachments/assets/a472de81-14d2-41c6-b022-205200974f1a" />
 
-Architecture Summary
+
+## **Architecture Summary**
 
 Custom VPC: whizlabs_VPC (10.0.0.0/16)
 
