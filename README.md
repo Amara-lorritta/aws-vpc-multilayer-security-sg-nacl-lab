@@ -46,14 +46,12 @@ Network ACL applied to both subnets
 ############################################################
 # - Click Open Console from lab portal
 # - Use provided IAM Username + Password
-# - Do NOT edit the 12-digit Account ID
-# - Set region: us-east-1 (N. Virginia)
 
 ############################################################
 # 2. CREATE A NEW VPC
 ############################################################
 # VPC → Your VPCs → Create VPC
-#   - Name: whizlabs_VPC
+#   - Name: MY_VPC
 #   - IPv4 CIDR: 10.0.0.0/16
 #   - IPv6: None
 #   - Tenancy: Default
@@ -62,8 +60,8 @@ Network ACL applied to both subnets
 # 3. CREATE & ATTACH INTERNET GATEWAY
 ############################################################
 # VPC → Internet Gateways → Create
-#   - Name: whizlabs_IGW
-# Attach IGW to whizlabs_VPC
+#   - Name: My_IGW
+# Attach IGW to My_VPC
 
 ############################################################
 # 4. CREATE PUBLIC & PRIVATE SUBNETS
@@ -81,7 +79,7 @@ Network ACL applied to both subnets
 ############################################################
 # Public Route Table:
 #   - Name: public_route
-#   - Route: 0.0.0.0/0 → whizlabs_IGW
+#   - Route: 0.0.0.0/0 → My_IGW
 #   - Associate with public_subnet
 
 # Private Route Table:
@@ -93,8 +91,8 @@ Network ACL applied to both subnets
 # 6. CREATE SECURITY GROUP
 ############################################################
 # EC2 → Security Groups → Create
-#   - Name: whizlabs_securitygroup
-#   - VPC: whizlabs_VPC
+#   - Name: My_securitygroup
+#   - VPC: My_VPC
 # Inbound Rules:
 #   - SSH (22) → Anywhere IPv4
 #   - All ICMP - IPv4 → Anywhere IPv4
@@ -103,8 +101,8 @@ Network ACL applied to both subnets
 # 7. CREATE & CONFIGURE NETWORK ACL
 ############################################################
 # VPC → Network ACLs → Create
-#   - Name: whizlabs_NACL
-#   - VPC: whizlabs_VPC
+#   - Name: My_NACL
+#   - VPC: My_VPC
 
 # Inbound Rules:
 #   Rule 100 → SSH (22) → 0.0.0.0/0 → ALLOW
@@ -125,15 +123,15 @@ Network ACL applied to both subnets
 #   - Name: public_instance
 #   - Subnet: public_subnet
 #   - Public IP: Enabled
-#   - Security Group: whizlabs_securitygroup
-#   - Key Pair: WhizKey.pem
+#   - Security Group: My_securitygroup
+#   - Key Pair: MyKey.pem
 
 # Private EC2:
 #   - Name: private_instance
 #   - Subnet: private_subnet
 #   - Public IP: Disabled
-#   - Security Group: whizlabs_securitygroup
-#   - Key Pair: WhizKey.pem
+#   - Security Group: My_securitygroup
+#   - Key Pair: MyKey.pem
 
 ############################################################
 # 9. TEST CONNECTIVITY
@@ -149,11 +147,20 @@ Network ACL applied to both subnets
 
 VPC & Subnets Overview
 
+<img width="1907" height="210" alt="image" src="https://github.com/user-attachments/assets/50762618-6bfc-4812-922b-275253450fbb" />
+
 Network ACL Rules
+
+<img width="1602" height="418" alt="image" src="https://github.com/user-attachments/assets/4bc94e4b-0b4b-4c7a-8ee2-2bad085d3aa0" />
+<img width="1623" height="426" alt="image" src="https://github.com/user-attachments/assets/92daecc5-881e-4809-a936-bdce4d1f15a9" />
 
 Security Group Inbound Rules
 
+<img width="1651" height="410" alt="image" src="https://github.com/user-attachments/assets/4584b54f-c626-45dd-b632-12c11b243e02" />
+
 EC2 Connectivity Test
+
+<img width="1174" height="535" alt="image" src="https://github.com/user-attachments/assets/79841a06-c91a-4414-93db-7c10f7b45ca6" />
 
 ## **What Actually Happened**
 
